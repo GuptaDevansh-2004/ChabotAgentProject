@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+/* Optional theme tokens */
+@theme {
+  --color-primary: #4f46e5;
+  --color-secondary: #3e36b8;
+}
+
+body {
+  @apply bg-gray-50 text-gray-900;
+}
+
+/* Custom scrollbar for textarea */
+textarea::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 8px;
+}
+
+textarea::-webkit-scrollbar-track {
+  background: #f1f1f1; /* light track */
+  border-radius: 8px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background: #9eb0dc; 
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    #7090e1 0%,   /* top hover color */
+    #506fbc 100%  /* bottom hover color */
+  );
+}
+
+@layer utilities {
+  .scrollbar-ambient::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-ambient::-webkit-scrollbar-track {
+    background: #e5e7eb; /* Tailwind gray-200, subtle */
+  }
+
+  .scrollbar-ambient::-webkit-scrollbar-thumb {
+    background: #748ab1;
+    border-radius: 10px;
+    cursor: grab;
+  }
+
+  .scrollbar-ambient::-webkit-scrollbar-thumb:active {
+    cursor: grabbing;
+  }
+
+  .scrollbar-ambient::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+      180deg,
+      #769bfa 0%,   /* top hover color */
+      #566eaa 100%  /* bottom hover color */
+    ); 
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: #e5e7eb; 
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #748ab1;
+    border-radius: 10px;
+    cursor: grab;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:active {
+    cursor: grabbing;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+      180deg,
+      #6382fc 0%,
+      #3a5dd9 100%
+    ); /* Tailwind gray-500 on hover */
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.font-noto-serif {
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.font-noto-sans {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
